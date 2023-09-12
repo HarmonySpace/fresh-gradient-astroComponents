@@ -1,29 +1,48 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import FreshIcon from "../components/FreshIcon.astro";
+import PrimaryButton from "../components/buttons/PrimaryButton.astro";
 
-const frashIconWhidth = "calc(30% + 10rem)";
+const frashIconWhidth = "calc(40% + 1rem)";
 ---
 
 <Layout title="Fresh | Home">
   <main>
-    <section class="flex container">
+    <section class="flex presentation">
       <FreshIcon class="icon" wh={frashIconWhidth} />
       <div class="titles">
         <h1>FRESH</h1>
         <p>My personal astro components</p>
       </div>
     </section>
+    <section class="flex buttons">
+      <h1>Buttons</h1>
+      <section class="flex list">
+        <PrimaryButton />
+        <PrimaryButton text="Btn" bstyle="square" fstyle="border" />
+        <PrimaryButton text="Send Message" bstyle="circle" fstyle="border" />
+        <PrimaryButton text="Btn" bstyle="rounded" />
+        <PrimaryButton text="Primary Button" bstyle="square" fstyle="fill" />
+        <PrimaryButton
+          text="Secondary Button"
+          bstyle="rounded"
+          fstyle="border"
+        />
+      </section>
+    </section>
+    <selection class="flex headers">
+      <h1>Headers</h1>
+    </selection>
   </main>
 </Layout>
 
 <style>
   main,
-  .container,
   .icon,
   .titles,
   .titles h1,
-  .titles p {
+  .titles p,
+  h1 {
     width: 100%;
   }
   .title,
@@ -36,11 +55,16 @@ const frashIconWhidth = "calc(30% + 10rem)";
     justify-content: center;
     align-items: center;
   }
-  .container {
-    margin-top: 5dvh;
+  h1 {
+    font-size: calc(2rem + 1vw);
+    text-align: left;
+  }
+  .presentation {
+    margin: calc(3rem + 10dvh) 0 calc(1rem + 1dvh) 0;
+    max-width: 1000px;
   }
   .titles {
-    transform: translateY(-5dvh);
+    transform: translateY(calc(-5rem + 3dvh));
   }
   .titles h1,
   .titles p {
@@ -52,5 +76,16 @@ const frashIconWhidth = "calc(30% + 10rem)";
   }
   .titles p {
     font-size: calc(1.2rem + 1vw);
+  }
+  .buttons,
+  .headers {
+    margin: calc(1rem + 3dvh) 0;
+    width: 80%;
+  }
+
+  .buttons .list {
+    margin: 2rem 0;
+    justify-content: start;
+    gap: calc(1rem + 1vw);
   }
 </style>
