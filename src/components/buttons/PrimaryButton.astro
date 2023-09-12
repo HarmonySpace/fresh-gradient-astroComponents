@@ -1,0 +1,98 @@
+---
+const { text = "Button", bstyle = "circle", fstyle = "fill" } = Astro.props;
+---
+
+<button id="button" class:list={[bstyle, fstyle]}>
+  <span>{text}</span>
+</button>
+
+<style>
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    font-size: calc(1rem + 0.5vw);
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+  }
+  button:hover {
+    cursor: pointer;
+  }
+  span {
+    color: var(--bg);
+    font-family: var(--ffB);
+  }
+  .circle {
+    border-radius: 35px;
+  }
+  .circle::before {
+    content: "";
+    border-radius: 35px;
+  }
+  .rounded {
+    border-radius: 15px;
+  }
+  .rounded::before {
+    content: "";
+    border-radius: 15px;
+  }
+  .square {
+    border-radius: 0px;
+  }
+  .square::before {
+    content: "";
+    border-radius: 0px;
+  }
+  .fill {
+    transition: all 0.5s ease;
+    background-image: linear-gradient(
+      45deg,
+      var(--accent) 0%,
+      var(--accent2) 50%,
+      var(--accent) 100%
+    );
+    background-size: 200% auto;
+  }
+  .fill:hover {
+    transform: scale(1.1);
+    background-position: right center;
+  }
+  .border {
+    position: relative;
+    text-align: center;
+    color: var(--fr);
+    background: var(--bg);
+    transition: all 0.5s ease;
+  }
+  .border span {
+    color: var(--fr);
+    transition: all 0.5s ease;
+  }
+  .border:hover span {
+    transform: scale(1.2);
+  }
+  .border::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    bottom: -3px;
+    right: -3px;
+    background-image: linear-gradient(
+      45deg,
+      var(--accent) 0%,
+      var(--accent2) 50%,
+      var(--accent) 100%
+    );
+    z-index: -1;
+    will-change: transform;
+    transition: all 0.5s ease;
+    background-size: 200% auto;
+  }
+  .border:hover::before {
+    background-color: var(--bg);
+    background-position: right center;
+  }
+</style>
