@@ -28,7 +28,9 @@ const { text = "Button", bstyle = "circle", fstyle = "fill" } = Astro.props;
   .circle::before {
     border-radius: 35px;
   }
-  .rounded,
+  .rounded {
+    border-radius: 12px;
+  }
   .rounded::before {
     border-radius: 15px;
   }
@@ -49,7 +51,8 @@ const { text = "Button", bstyle = "circle", fstyle = "fill" } = Astro.props;
   }
   .fill:hover,
   .fill:focus,
-  .border:hover::before {
+  .border:hover::before,
+  .border:focus::before {
     background-position: right center;
   }
   .fill:hover,
