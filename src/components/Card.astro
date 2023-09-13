@@ -21,14 +21,15 @@ const si = size;
 
 <style>
   .container {
-    display: flex;
-    align-items: start;
     flex-grow: 1;
     flex-shrink: 1;
-    padding: calc(0.1rem + 0.5dvh) calc(0.1rem + 0.5dvh);
+    align-items: stretch;
+    padding: calc(0.1rem + 0.3dvh) calc(0.1rem + 0.3dvh);
     border-radius: 20px;
   }
   .container-inside {
+    align-items: center;
+    align-content: start;
     padding: calc(1rem + 1dvh) calc(2rem + 1dvh);
     border-radius: 15px;
   }
@@ -60,7 +61,7 @@ const si = size;
     color: var(--fr);
   }
   .mediun {
-    flex-basis: 700px;
+    flex-basis: 600px;
   }
   .small {
     flex-basis: 300px;
