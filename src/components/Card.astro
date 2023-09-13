@@ -21,16 +21,17 @@ const si = size;
 
 <style>
   .container {
-    display: flex;
-    align-items: start;
     flex-grow: 1;
     flex-shrink: 1;
-    padding: calc(0.1rem + 0.5dvh) calc(0.1rem + 0.5dvh);
+    align-items: stretch;
+    padding: calc(0.1rem + 0.2dvh) calc(0.1rem + 0.2dvh);
     border-radius: 20px;
   }
   .container-inside {
+    align-items: start;
+    align-content: start;
     padding: calc(1rem + 1dvh) calc(2rem + 1dvh);
-    border-radius: 15px;
+    border-radius: 17px;
   }
   h1,
   p {
