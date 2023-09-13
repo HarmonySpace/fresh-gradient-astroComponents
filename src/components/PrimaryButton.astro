@@ -24,28 +24,20 @@ const { text = "Button", bstyle = "circle", fstyle = "fill" } = Astro.props;
     color: var(--bg);
     font-family: var(--ffB);
   }
-  .circle {
-    border-radius: 35px;
-  }
+  .circle,
   .circle::before {
-    content: "";
     border-radius: 35px;
   }
-  .rounded {
-    border-radius: 15px;
-  }
+  .rounded,
   .rounded::before {
-    content: "";
     border-radius: 15px;
   }
-  .square {
-    border-radius: 0px;
-  }
+  .square,
   .square::before {
-    content: "";
     border-radius: 0px;
   }
-  .fill {
+  .fill,
+  .border::before {
     transition: all 0.5s ease;
     background-image: linear-gradient(
       45deg,
@@ -55,9 +47,15 @@ const { text = "Button", bstyle = "circle", fstyle = "fill" } = Astro.props;
     );
     background-size: 200% auto;
   }
-  .fill:hover {
-    transform: scale(1.1);
+  .fill:hover,
+  .fill:focus,
+  .border:hover::before {
     background-position: right center;
+  }
+  .fill:hover,
+  .fill:focus,
+  .border:hover span {
+    transform: scale(1.1);
   }
   .border {
     position: relative;
@@ -70,9 +68,6 @@ const { text = "Button", bstyle = "circle", fstyle = "fill" } = Astro.props;
     color: var(--fr);
     transition: all 0.5s ease;
   }
-  .border:hover span {
-    transform: scale(1.2);
-  }
   .border::before {
     content: "";
     position: absolute;
@@ -80,19 +75,8 @@ const { text = "Button", bstyle = "circle", fstyle = "fill" } = Astro.props;
     left: -3px;
     bottom: -3px;
     right: -3px;
-    background-image: linear-gradient(
-      45deg,
-      var(--accent) 0%,
-      var(--accent2) 50%,
-      var(--accent3) 100%
-    );
     z-index: -1;
     will-change: transform;
     transition: all 0.5s ease;
-    background-size: 200% auto;
-  }
-  .border:hover::before {
-    background-color: var(--bg);
-    background-position: right center;
   }
 </style>
