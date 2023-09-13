@@ -2,6 +2,7 @@
 const {
   cl1 = "var(--accent)",
   cl2 = "var(--accent2)",
+  cl3 = "var(--accent3)",
   str = "1rem",
   wh = "100%",
 } = Astro.props;
@@ -19,17 +20,17 @@ const styleSvg = stroke;
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 500 500"
-    ><defs
-      ><linearGradient
+    ><defs>
+      <linearGradient
         id="gradient"
         x1="111.59"
         y1="250"
         x2="388.41"
         y2="250"
         gradientUnits="userSpaceOnUse"
-        ><stop offset="0" stop-color={cl1}></stop><stop
-          offset="1"
-          stop-color={cl2}></stop></linearGradient
+        ><stop offset="0" stop-color={cl1}></stop>
+        <stop offset="0.55" stop-color={cl2}></stop>
+        <stop offset="1" stop-color={cl3}></stop></linearGradient
       ></defs
     ><path
       id="lemon"
