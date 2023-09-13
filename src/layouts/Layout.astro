@@ -27,6 +27,7 @@ const { title } = Astro.props;
     --bg: #13151a;
     --accent: #59ffff;
     --accent2: #7dff91;
+    --accent3: #d0ff00;
     --ff: "InterL", sans-serif;
     --ffT: "InterT", sans-serif;
     --ffB: "InterB", sans-serif;
@@ -66,6 +67,44 @@ const { title } = Astro.props;
     font-family: system-ui, sans-serif;
     background: var(--bg);
     background-size: 224px;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    width: 100%;
+  }
+  h1,
+  h2 {
+    font-family: var(--ffB);
+  }
+  h3,
+  h4 {
+    font-family: var(--ff);
+  }
+  h5,
+  h6 {
+    font-family: var(--ffT);
+  }
+  h1 {
+    font-size: calc(4.5rem + 1dvw);
+  }
+  h2 {
+    font-size: calc(4rem + 1dvw);
+  }
+  h3 {
+    font-size: calc(3.7rem + 1dvw);
+  }
+  h4 {
+    font-size: calc(3.5rem + 1dvw);
+  }
+  h5 {
+    font-size: calc(3.3rem + 1dvw);
+  }
+  h6 {
+    font-size: calc(3rem + 1dvw);
   }
   .flex {
     width: 100%;

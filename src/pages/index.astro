@@ -16,22 +16,26 @@ const frashIconWhidth = "calc(40% + 1rem)";
       </div>
     </section>
     <section class="flex buttons">
-      <h1>Buttons</h1>
-      <section class="flex list">
+      <h1 class="header-section">Buttons</h1>
+      <div class="flex list">
         <PrimaryButton />
         <PrimaryButton text="Btn" bstyle="square" fstyle="border" />
         <PrimaryButton text="Send Message" bstyle="circle" fstyle="border" />
         <PrimaryButton text="Btn" bstyle="rounded" />
         <PrimaryButton text="Primary Button" bstyle="square" fstyle="fill" />
-        <PrimaryButton
-          text="Secondary Button"
-          bstyle="rounded"
-          fstyle="border"
-        />
-      </section>
+        <PrimaryButton text="Send value" bstyle="rounded" fstyle="border" />
+      </div>
     </section>
     <selection class="flex headers">
-      <h1>Headers</h1>
+      <h1 class="header-section">Headers</h1>
+      <div class="flex list">
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+      </div>
     </selection>
   </main>
 </Layout>
@@ -41,8 +45,7 @@ const frashIconWhidth = "calc(40% + 1rem)";
   .icon,
   .titles,
   .titles h1,
-  .titles p,
-  h1 {
+  .titles p {
     width: 100%;
   }
   .title,
@@ -55,7 +58,7 @@ const frashIconWhidth = "calc(40% + 1rem)";
     justify-content: center;
     align-items: center;
   }
-  h1 {
+  .header-section {
     font-size: calc(2rem + 1vw);
     text-align: left;
   }
