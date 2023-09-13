@@ -2,12 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 import FreshIcon from "../components/FreshIcon.astro";
 import PrimaryButton from "../components/PrimaryButton.astro";
+import Card from "../components/Card.astro";
 
 const frashIconWhidth = "calc(40% + 1rem)";
 ---
 
 <Layout title="Fresh | Home">
-  <main>
+  <main class="flex">
     <section class="flex presentation">
       <FreshIcon class="icon" wh={frashIconWhidth} />
       <div class="titles">
@@ -39,59 +40,91 @@ const frashIconWhidth = "calc(40% + 1rem)";
     </selection>
     <section class="flex container">
       <h1 class="header-section">Cards</h1>
-      <div class="flex list"></div>
+      <div class="flex list">
+        <Card />
+        <Card
+          title=" Loren"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          animation="zoom-off"
+        />
+        <Card
+          title=" Loren"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          fill={false}
+        />
+        <div class="flex list2">
+          <Card size="mediun" />
+          <Card
+            size="mediun"
+            fill={false}
+            animation="zoom-off"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            fill={false}
+          />
+          <div class="flex list2">
+            <Card size="small" />
+            <Card
+              size="small"
+              fill={false}
+              animation="zoom-off"
+              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              fill={false}
+            />
+            <Card size="small" />
+          </div>
+        </div>
+      </div>
     </section>
   </main>
+
+  <style>
+    main,
+    .icon,
+    .titles,
+    .titles h1,
+    .titles p {
+      width: 100%;
+    }
+    .title,
+    p {
+      text-align: center;
+    }
+    .container {
+      margin: calc(1rem + 3dvh) 0;
+      width: 80%;
+    }
+    .header-section {
+      font-size: calc(2rem + 1vw);
+      text-align: left;
+    }
+    .presentation {
+      margin: calc(3rem + 10dvh) 0 calc(1rem + 1dvh) 0;
+      max-width: 1000px;
+    }
+    .titles {
+      transform: translateY(calc(-5rem + 3dvh));
+    }
+    .titles h1,
+    .titles p {
+      text-align: center;
+    }
+    .titles h1 {
+      font-size: calc(4rem + 3vw);
+      font-family: var(--ffB);
+    }
+    .titles p {
+      font-size: calc(1.2rem + 1vw);
+    }
+    .list {
+      margin: 2rem 0;
+      justify-content: start;
+      gap: calc(1rem + 1vw);
+    }
+    .list2 {
+      margin: 2rem 0;
+      justify-content: center;
+      align-items: stretch;
+      gap: calc(1rem + 1vw);
+    }
+  </style>
 </Layout>
-
-<style>
-  main,
-  .icon,
-  .titles,
-  .titles h1,
-  .titles p {
-    width: 100%;
-  }
-  .title,
-  p {
-    text-align: center;
-  }
-  main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-  .container {
-    margin: calc(1rem + 3dvh) 0;
-    width: 80%;
-  }
-  .header-section {
-    font-size: calc(2rem + 1vw);
-    text-align: left;
-  }
-  .presentation {
-    margin: calc(3rem + 10dvh) 0 calc(1rem + 1dvh) 0;
-    max-width: 1000px;
-  }
-  .titles {
-    transform: translateY(calc(-5rem + 3dvh));
-  }
-  .titles h1,
-  .titles p {
-    text-align: center;
-  }
-  .titles h1 {
-    font-size: calc(4rem + 3vw);
-    font-family: var(--ffB);
-  }
-  .titles p {
-    font-size: calc(1.2rem + 1vw);
-  }
-
-  .list {
-    margin: 2rem 0;
-    justify-content: start;
-    gap: calc(1rem + 1vw);
-  }
-</style>
