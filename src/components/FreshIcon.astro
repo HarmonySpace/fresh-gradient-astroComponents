@@ -5,11 +5,13 @@ const {
   cl3 = "var(--accent3)",
   str = "1rem",
   wh = "100%",
+  gid = "gradient",
 } = Astro.props;
 const stroke = "stroke-width: " + str + ";";
 const width = "width: " + wh + ";";
 const styleDiv = width;
 const styleSvg = stroke;
+const stylePath = "stroke: url(#" + gid + ");";
 ---
 
 <div style={styleDiv}>
@@ -22,7 +24,7 @@ const styleSvg = stroke;
     viewBox="0 0 500 500"
     ><defs>
       <linearGradient
-        id="gradient"
+        id={gid}
         x1="111.59"
         y1="250"
         x2="388.41"
@@ -35,6 +37,7 @@ const styleSvg = stroke;
     ><path
       id="lemon"
       class="cls-1"
+      style={stylePath}
       d="M308.06,193c56.8,56.8,85.43,120.27,63.94,141.76s-84.95-7.14-141.76-63.94S144.81,150.5,166.3,129,251.26,136.15,308.06,193Zm60.15,138M166.3,129c-47.08,47.08-58.48,115.31-30,170.3a14.86,14.86,0,0,1-2.47,17.18,35.83,35.83,0,0,0,51.06,50.29l.08-.09a15.36,15.36,0,0,1,17.57-3.33A148.31,148.31,0,0,0,372,334.71M269.15,304.6V159.12m72.74,72.74H196.41m-20.17-98.2,192,192"
     ></path></svg
   >
@@ -47,7 +50,8 @@ const styleSvg = stroke;
   .cls-1 {
     fill: none;
     stroke-miterlimit: 10;
-    stroke: url(#gradient);
+    stroke-linecap: round;
+    /* stroke: url(#gradient); */
   }
   div {
     display: flex;

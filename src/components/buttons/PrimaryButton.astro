@@ -2,7 +2,7 @@
 const { text = "Button", bstyle = "circle", fstyle = "fill" } = Astro.props;
 ---
 
-<button id="button" class:list={[bstyle, fstyle]}>
+<button class:list={[bstyle, fstyle]}>
   <span>{text}</span>
 </button>
 
@@ -15,7 +15,6 @@ const { text = "Button", bstyle = "circle", fstyle = "fill" } = Astro.props;
     font-size: calc(1rem + 0.5vw);
     border: none;
     outline: none;
-    text-transform: uppercase;
   }
   button:hover {
     cursor: pointer;
@@ -26,7 +25,7 @@ const { text = "Button", bstyle = "circle", fstyle = "fill" } = Astro.props;
   }
   .circle,
   .circle::before {
-    border-radius: 35px;
+    border-radius: 50px;
   }
   .rounded {
     border-radius: 12px;
