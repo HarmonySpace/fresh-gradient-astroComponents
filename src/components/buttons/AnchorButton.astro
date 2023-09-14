@@ -1,5 +1,6 @@
 ---
-import FreshIcon from "../FreshIcon.astro";
+// import FreshIcon from "../icons/FreshIcon.astro";
+import ArrowIcon from "../icons/ArrowIcon.astro";
 const {
   text = "Button",
   link = "#",
@@ -9,43 +10,29 @@ const {
 } = Astro.props;
 
 let col = "",
-  col2 = "",
-  col3 = "",
-  fill = true,
-  idgradient = "";
+  pa = "";
 
 if (fstyle == "fill") {
   col = "var(--bg)";
-  col2 = "var(--bg)";
-  col2 = "var(--bg)";
 } else {
-  col = "var(--accent)";
-  col2 = "var(--accent2)";
-  col3 = "var(--accent3)";
-  fill = false;
+  col = "var(--fr)";
 }
 
-if (fill == true) {
-  idgradient = "buttonFill";
+if (icon == true) {
+  pa = "pd1";
 } else {
-  idgradient = "buttonBorder";
+  pa = "pd2";
 }
 
 let frashIconWhidth = "calc(2rem + 1dvw)";
 ---
 
-<a href={link} class:list={[bstyle, fstyle]}>
+<a href={link} class:list={[bstyle, fstyle, pa]}>
   <span>{text}</span>
   {
     icon && (
       <div class="icon">
-        <FreshIcon
-          wh={frashIconWhidth}
-          gid={idgradient}
-          cl1={col}
-          cl2={col2}
-          cl3={col3}
-        />
+        <ArrowIcon wh={frashIconWhidth} col={col} str="0.5rem" />
       </div>
     )
   }
@@ -56,11 +43,16 @@ let frashIconWhidth = "calc(2rem + 1dvw)";
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.2rem 3rem;
     font-size: calc(0.8rem + 0.5vw);
     border: none;
     outline: none;
     text-decoration: none;
+  }
+  .pd1 {
+    padding: 0.2rem 3rem;
+  }
+  .pd2 {
+    padding: 0.9rem 3rem;
   }
   a:hover {
     cursor: pointer;
