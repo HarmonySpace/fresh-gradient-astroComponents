@@ -5,15 +5,25 @@ const {
   animation = "zoom-in",
   fill = true,
   size = "large",
+  bstyle = "rounded",
 } = Astro.props;
 
 const ani = animation;
 const fi = fill ? "fill" : "stroke";
 const si = size;
+let bo = "";
+let bo2 = "";
+if (bstyle == "rounded") {
+  bo = "rounded";
+  bo2 = "rounded2";
+} else {
+  bo = "square";
+  bo2 = "square";
+}
 ---
 
-<div class="flex container gradient-bg" class:list={[ani, si]}>
-  <div class="flex container-inside" class:list={[fi]}>
+<div class="flex container gradient-bg" class:list={[ani, si, bo]}>
+  <div class="flex container-inside" class:list={[fi, bo2]}>
     <h1>{title}</h1>
     <p>{description}</p>
   </div>
@@ -25,13 +35,11 @@ const si = size;
     flex-shrink: 1;
     align-items: stretch;
     padding: calc(0.1rem + 0.2dvh) calc(0.1rem + 0.2dvh);
-    border-radius: 20px;
   }
   .container-inside {
     align-items: start;
     align-content: start;
     padding: calc(1rem + 1dvh) calc(2rem + 1dvh);
-    border-radius: 17px;
   }
   h1,
   p {
@@ -65,5 +73,11 @@ const si = size;
   }
   .small {
     flex-basis: 200px;
+  }
+  .rounded {
+    border-radius: 20px;
+  }
+  .rounded2 {
+    border-radius: 17px;
   }
 </style>
