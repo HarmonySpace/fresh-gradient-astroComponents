@@ -1,0 +1,132 @@
+---
+// import FreshIcon from "../icons/FreshIcon.astro";
+import ArrowIcon from "../icons/ArrowIcon.astro";
+const {
+  text = "Button",
+  link = "#",
+  bstyle = "circle",
+  fstyle = "fill",
+  icon = true,
+} = Astro.props;
+
+let col = "",
+  pa = "";
+
+if (fstyle == "fill") {
+  col = "var(--bg)";
+} else {
+  col = "var(--fr)";
+}
+
+if (icon == true) {
+  pa = "pd1";
+} else {
+  pa = "pd2";
+}
+
+let frashIconWhidth = "calc(2rem + 1dvw)";
+---
+
+<a href={link} class:list={[bstyle, fstyle, pa]}>
+  <span>{text}</span>
+  {
+    icon && (
+      <div class="icon">
+        <ArrowIcon wh={frashIconWhidth} col={col} str="0.5rem" />
+      </div>
+    )
+  }
+</a>
+
+<style>
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(0.8rem + 0.5vw);
+    border: none;
+    outline: none;
+    text-decoration: none;
+  }
+  .pd1 {
+    padding: 0.2rem 3rem;
+  }
+  .pd2 {
+    padding: 0.9rem 3rem;
+  }
+  a:hover {
+    cursor: pointer;
+  }
+  span {
+    color: var(--bg);
+    font-family: var(--ff);
+  }
+  .icon {
+    transition: all 0.5s ease;
+    transform: translateX(1.5rem);
+  }
+  .circle,
+  .circle::before {
+    border-radius: 50px;
+  }
+  .rounded {
+    border-radius: 12px;
+  }
+  .rounded::before {
+    border-radius: 15px;
+  }
+  .square,
+  .square::before {
+    border-radius: 0px;
+  }
+  .border {
+    position: relative;
+    text-align: center;
+    color: var(--fr);
+    background: var(--bg);
+    transition: all 0.5s ease;
+  }
+  .border span {
+    color: var(--fr);
+    transition: all 0.5s ease;
+  }
+  .border::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    bottom: -3px;
+    right: -3px;
+    z-index: -1;
+    will-change: transform;
+    transition: all 0.5s ease;
+  }
+  .fill,
+  .border::before {
+    transition: all 0.5s ease;
+    background-image: linear-gradient(
+      45deg,
+      var(--accent) 0%,
+      var(--accent2) 50%,
+      var(--accent3) 100%
+    );
+    background-size: 200% auto;
+  }
+  .fill:hover,
+  .fill:focus,
+  .border:hover::before,
+  .border:focus::before {
+    background-position: right center;
+  }
+  .fill:hover,
+  .fill:focus,
+  .border:hover span {
+    transform: scale(1.1);
+  }
+  .fill:hover .icon,
+  .fill:focus .icon,
+  .border:hover .icon {
+    transition: all 0.5s ease;
+    transform: translateX(1rem);
+  }
+</style>

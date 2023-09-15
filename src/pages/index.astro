@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import FreshIcon from "../components/FreshIcon.astro";
-import PrimaryButton from "../components/PrimaryButton.astro";
+import FreshIcon from "../components/icons/FreshIcon.astro";
+import PrimaryButton from "../components/buttons/PrimaryButton.astro";
+import AnchorButton from "../components/buttons/AnchorButton.astro";
 import Card from "../components/Card.astro";
 
 const frashIconWhidth = "calc(40% + 1rem)";
@@ -10,7 +11,7 @@ const frashIconWhidth = "calc(40% + 1rem)";
 <Layout title="Fresh | Home">
   <main class="flex">
     <section class="flex presentation">
-      <FreshIcon class="icon" wh={frashIconWhidth} />
+      <FreshIcon wh={frashIconWhidth} />
       <div class="titles">
         <h1>FRESH</h1>
         <p>My personal astro components</p>
@@ -25,6 +26,34 @@ const frashIconWhidth = "calc(40% + 1rem)";
         <PrimaryButton text="Btn" bstyle="rounded" />
         <PrimaryButton text="Primary Button" bstyle="square" fstyle="fill" />
         <PrimaryButton text="Send value" bstyle="rounded" fstyle="border" />
+        <AnchorButton text="Link" icon={false} />
+        <AnchorButton text="A" bstyle="rounded" />
+        <AnchorButton
+          text="Anchor"
+          bstyle="square"
+          fstyle="fill"
+          icon={false}
+        />
+        <AnchorButton text="About we and you" bstyle="square" fstyle="border" />
+        <AnchorButton text="Go" bstyle="circle" fstyle="border" />
+        <AnchorButton text="Link" />
+        <AnchorButton text="Go to Home" bstyle="rounded" fstyle="border" />
+        <AnchorButton text="Go" bstyle="circle" fstyle="border" icon={false} />
+        <AnchorButton text="A" bstyle="rounded" icon={false} />
+        <AnchorButton text="Anchor" bstyle="square" fstyle="fill" />
+        <AnchorButton
+          text="About we and you"
+          bstyle="square"
+          fstyle="border"
+          icon={false}
+        />
+
+        <AnchorButton
+          text="Go to Home"
+          bstyle="rounded"
+          fstyle="border"
+          icon={false}
+        />
       </div>
     </section>
     <selection class="flex container">

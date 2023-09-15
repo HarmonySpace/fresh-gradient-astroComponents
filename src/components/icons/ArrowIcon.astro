@@ -1,0 +1,41 @@
+---
+const { col = "var(--accent)", str = "1rem", wh = "100%" } = Astro.props;
+const stroke = "stroke-width: " + str + ";";
+const width = "width: " + wh + ";";
+const styleDiv = width;
+const styleSvg = stroke;
+const stylePath = "stroke: " + col + ";";
+---
+
+<div style={styleDiv}>
+  <svg
+    style={styleSvg}
+    id="AnchorIcon"
+    data-name="Anchor icon"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 100 100"
+    ><path
+      id="flecha"
+      class="cls-1"
+      style={stylePath}
+      d="M69.49,51.7h-39M56,64.62,69.49,51.7,56,38.78"></path></svg
+  >
+</div>
+
+<style>
+  svg {
+    width: 100%;
+  }
+  .cls-1 {
+    fill: none;
+    stroke-miterlimit: 10;
+    stroke-linecap: round;
+    /* stroke: url(#gradient); */
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
