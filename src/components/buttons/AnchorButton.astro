@@ -3,7 +3,7 @@ const {
   text = "Button",
   link = "#",
   bstyle = "circle",
-  fstyle = "fill",
+  fill = true,
   icon = true,
 } = Astro.props;
 
@@ -15,7 +15,14 @@ if (icon == true) {
 }
 ---
 
-<a href={link} class:list={[bstyle, fstyle, pa]}>
+<a
+  href={link}
+  class:list={[
+    bstyle,
+    { fill: fill, border: !fill },
+    { pd1: icon, pd2: !icon },
+  ]}
+>
   {
     icon && (
       <div class="pre-icon">

@@ -2,19 +2,18 @@
 const {
   text = "Button",
   bstyle = "circle",
-  fstyle = "fill",
+  fill = true,
   icon = true,
 } = Astro.props;
-
-let pa = "";
-if (icon == true) {
-  pa = "pd1";
-} else {
-  pa = "pd2";
-}
 ---
 
-<button class:list={[bstyle, fstyle, pa]}>
+<button
+  class:list={[
+    bstyle,
+    { fill: fill, border: !fill },
+    { pd1: icon, pd2: !icon },
+  ]}
+>
   {
     icon && (
       <div class="pre-icon">
