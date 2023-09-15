@@ -1,6 +1,4 @@
 ---
-// import FreshIcon from "../icons/FreshIcon.astro";
-import ArrowIcon from "../icons/ArrowIcon.astro";
 const {
   text = "Button",
   link = "#",
@@ -9,30 +7,27 @@ const {
   icon = true,
 } = Astro.props;
 
-let col = "",
-  pa = "";
-
-if (fstyle == "fill") {
-  col = "var(--bg)";
-} else {
-  col = "var(--fr)";
-}
-
+let pa = "";
 if (icon == true) {
   pa = "pd1";
 } else {
   pa = "pd2";
 }
-
-let frashIconWhidth = "calc(2rem + 1dvw)";
 ---
 
 <a href={link} class:list={[bstyle, fstyle, pa]}>
+  {
+    icon && (
+      <div class="pre-icon">
+        <slot name="pre-icon" />
+      </div>
+    )
+  }
   <span>{text}</span>
   {
     icon && (
-      <div class="icon">
-        <ArrowIcon wh={frashIconWhidth} col={col} str="0.5rem" />
+      <div class="post-icon">
+        <slot name="post-icon" />
       </div>
     )
   }
@@ -61,7 +56,11 @@ let frashIconWhidth = "calc(2rem + 1dvw)";
     color: var(--bg);
     font-family: var(--ff);
   }
-  .icon {
+  .pre-icon {
+    transition: all 0.5s ease;
+    transform: translateX(-1.5rem);
+  }
+  .post-icon {
     transition: all 0.5s ease;
     transform: translateX(1.5rem);
   }
@@ -121,12 +120,18 @@ let frashIconWhidth = "calc(2rem + 1dvw)";
   .fill:hover,
   .fill:focus,
   .border:hover span {
-    transform: scale(1.1);
+    transform: scale(0.95);
   }
-  .fill:hover .icon,
-  .fill:focus .icon,
-  .border:hover .icon {
+  .fill:hover .pre-icon,
+  .fill:focus .pre-icon,
+  .border:hover .pre-icon {
     transition: all 0.5s ease;
-    transform: translateX(1rem);
+    transform: translateX(-0.8rem);
+  }
+  .fill:hover .post-icon,
+  .fill:focus .post-icon,
+  .border:hover .post-icon {
+    transition: all 0.5s ease;
+    transform: translateX(0.8rem);
   }
 </style>

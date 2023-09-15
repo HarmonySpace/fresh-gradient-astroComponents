@@ -1,17 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import FreshIcon from "../components/icons/FreshIcon.astro";
+import ArrowIcon from "../components/icons/ArrowIcon.astro";
 import PrimaryButton from "../components/buttons/PrimaryButton.astro";
 import AnchorButton from "../components/buttons/AnchorButton.astro";
 import Card from "../components/Card.astro";
 
-const frashIconWhidth = "calc(40% + 1rem)";
+const IconFW = "calc(40% + 1rem)";
+const IconAW = "calc(2rem + 1dvw)";
 ---
 
 <Layout title="Fresh | Home">
   <main class="flex">
     <section class="flex presentation">
-      <FreshIcon wh={frashIconWhidth} />
+      <FreshIcon wh={IconFW} />
       <div class="titles">
         <h1>FRESH</h1>
         <p>My personal astro components</p>
@@ -20,40 +22,172 @@ const frashIconWhidth = "calc(40% + 1rem)";
     <section class="flex container">
       <h1 class="header-section">Buttons</h1>
       <div class="flex list">
-        <PrimaryButton />
-        <PrimaryButton text="Btn" bstyle="square" fstyle="border" />
-        <PrimaryButton text="Send Message" bstyle="circle" fstyle="border" />
-        <PrimaryButton text="Btn" bstyle="rounded" />
-        <PrimaryButton text="Primary Button" bstyle="square" fstyle="fill" />
-        <PrimaryButton text="Send value" bstyle="rounded" fstyle="border" />
-        <AnchorButton text="Link" icon={false} />
-        <AnchorButton text="A" bstyle="rounded" />
+        <!-- Primary Buttons -->
+        <PrimaryButton icon={false} />
+        <PrimaryButton
+          text="Btn"
+          bstyle="square"
+          fstyle="border"
+          icon={false}
+        />
+        <PrimaryButton
+          text="Send Message"
+          bstyle="circle"
+          fstyle="border"
+          icon={false}
+        />
+        <PrimaryButton text="Summ +" bstyle="rounded" icon={false} />
+        <PrimaryButton
+          text="Primary Button"
+          bstyle="square"
+          fstyle="fill"
+          icon={false}
+        />
+        <PrimaryButton
+          text="Send value"
+          bstyle="rounded"
+          fstyle="border"
+          icon={false}
+        />
+        <PrimaryButton text="Add" bstyle="rounded">
+          <FreshIcon
+            wh={IconAW}
+            cl1="var(--bg)"
+            cl2="var(--bg)"
+            cl3="var(--bg)"
+            gid="dark"
+            slot="pre-icon"
+          />
+        </PrimaryButton>
+        <PrimaryButton text="Move" bstyle="rounded" fstyle="border">
+          <FreshIcon wh={IconAW} gid="light" slot="pre-icon" />
+        </PrimaryButton>
+        <PrimaryButton text="New" bstyle="rounded">
+          <FreshIcon wh={IconAW} gid="dark" slot="post-icon" />
+        </PrimaryButton>
+        <PrimaryButton text="Cancel">
+          <FreshIcon wh={IconAW} gid="dark" slot="pre-icon" />
+        </PrimaryButton>
+
+        <PrimaryButton text="Send" bstyle="rounded" fstyle="border">
+          <FreshIcon wh={IconAW} gid="light" slot="post-icon" />
+        </PrimaryButton>
+        <PrimaryButton text="Change" bstyle="square" fstyle="fill">
+          <FreshIcon wh={IconAW} gid="dark" slot="pre-icon" />
+        </PrimaryButton>
+        <PrimaryButton text="Next Page" bstyle="square" fstyle="fill">
+          <FreshIcon wh={IconAW} gid="dark" slot="post-icon" />
+        </PrimaryButton>
+        <PrimaryButton text="Refresh" bstyle="square" fstyle="border">
+          <FreshIcon
+            wh={IconAW}
+            cl1="var(--fr)"
+            cl2="var(--fr)"
+            cl3="var(--fr)"
+            gid="light"
+            slot="pre-icon"
+          />
+        </PrimaryButton>
+        <PrimaryButton text="Back" bstyle="square" fstyle="border">
+          <FreshIcon wh={IconAW} gid="light" slot="post-icon" />
+        </PrimaryButton>
+        <PrimaryButton text="Upload" bstyle="circle" fstyle="border">
+          <FreshIcon wh={IconAW} gid="light" slot="pre-icon" />
+        </PrimaryButton>
+        <PrimaryButton text="New file" bstyle="circle" fstyle="border">
+          <FreshIcon wh={IconAW} gid="light" slot="post-icon" />
+        </PrimaryButton>
+        <PrimaryButton text="Copy">
+          <FreshIcon wh={IconAW} gid="dark" slot="post-icon" />
+        </PrimaryButton>
+        <!-- Anchors -->
+        <AnchorButton text="Link" icon={false} link="youtube.com" />
+        <AnchorButton text="About we" bstyle="square" fstyle="border">
+          <ArrowIcon wh={IconAW} col="var(--fr)" str="0.5rem" slot="pre-icon" />
+        </AnchorButton>
         <AnchorButton
           text="Anchor"
           bstyle="square"
           fstyle="fill"
           icon={false}
         />
-        <AnchorButton text="About we and you" bstyle="square" fstyle="border" />
-        <AnchorButton text="Go" bstyle="circle" fstyle="border" />
-        <AnchorButton text="Link" />
-        <AnchorButton text="Go to Home" bstyle="rounded" fstyle="border" />
+        <AnchorButton text="Go" bstyle="circle" fstyle="border">
+          <ArrowIcon
+            wh={IconAW}
+            col="var(--fr)"
+            str="0.5rem"
+            slot="post-icon"
+          />
+        </AnchorButton>
+        <AnchorButton text="Home">
+          <ArrowIcon
+            wh={IconAW}
+            col="var(--bg)"
+            str="0.5rem"
+            slot="post-icon"
+          />
+        </AnchorButton>
         <AnchorButton text="Go" bstyle="circle" fstyle="border" icon={false} />
         <AnchorButton text="A" bstyle="rounded" icon={false} />
-        <AnchorButton text="Anchor" bstyle="square" fstyle="fill" />
+        <AnchorButton text="Hello" bstyle="rounded">
+          <ArrowIcon wh={IconAW} col="var(--bg)" str="0.5rem" slot="pre-icon" />
+        </AnchorButton>
+        <AnchorButton text="Match" bstyle="rounded" fstyle="border">
+          <ArrowIcon wh={IconAW} col="var(--fr)" str="0.5rem" slot="pre-icon" />
+        </AnchorButton>
         <AnchorButton
-          text="About we and you"
+          text="Docs"
           bstyle="square"
           fstyle="border"
           icon={false}
         />
-
+        <AnchorButton text="Help" bstyle="square" fstyle="fill">
+          <ArrowIcon wh={IconAW} col="var(--bg)" str="0.5rem" slot="pre-icon" />
+        </AnchorButton>
+        <AnchorButton text="Home">
+          <ArrowIcon wh={IconAW} col="var(--bg)" str="0.5rem" slot="pre-icon" />
+        </AnchorButton>
+        <AnchorButton text="About we and you" bstyle="square" fstyle="border">
+          <ArrowIcon
+            wh={IconAW}
+            col="var(--fr)"
+            str="0.5rem"
+            slot="post-icon"
+          />
+        </AnchorButton>
         <AnchorButton
           text="Go to Home"
           bstyle="rounded"
           fstyle="border"
           icon={false}
         />
+        <AnchorButton text="Clear" bstyle="rounded">
+          <ArrowIcon
+            wh={IconAW}
+            col="var(--bg)"
+            str="0.5rem"
+            slot="post-icon"
+          />
+        </AnchorButton>
+        <AnchorButton text="Templates" bstyle="square" fstyle="fill">
+          <ArrowIcon
+            wh={IconAW}
+            col="var(--bg)"
+            str="0.5rem"
+            slot="post-icon"
+          />
+        </AnchorButton>
+        <AnchorButton text="Get started" bstyle="circle" fstyle="border">
+          <ArrowIcon wh={IconAW} col="var(--fr)" str="0.5rem" slot="pre-icon" />
+        </AnchorButton>
+        <AnchorButton text="Start" bstyle="rounded" fstyle="border">
+          <ArrowIcon
+            wh={IconAW}
+            col="var(--fr)"
+            str="0.5rem"
+            slot="post-icon"
+          />
+        </AnchorButton>
       </div>
     </section>
     <selection class="flex container">
