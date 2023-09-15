@@ -7,23 +7,23 @@ const {
   size = "large",
   bstyle = "rounded",
 } = Astro.props;
-
-const ani = animation;
-const fi = fill ? "fill" : "stroke";
-const si = size;
-let bo = "";
-let bo2 = "";
-if (bstyle == "rounded") {
-  bo = "rounded";
-  bo2 = "rounded2";
-} else {
-  bo = "square";
-  bo2 = "square";
-}
 ---
 
-<div class="flex container gradient-bg" class:list={[ani, si, bo]}>
-  <div class="flex container-inside" class:list={[fi, bo2]}>
+<div
+  class="flex container gradient-bg"
+  class:list={[
+    animation,
+    size,
+    { rounded: bstyle == "rounded", square: bstyle == "square" },
+  ]}
+>
+  <div
+    class="flex container-inside"
+    class:list={[
+      { rounded2: bstyle == "rounded", square: bstyle == "square" },
+      { fill: fill, stroke: !fill },
+    ]}
+  >
     <h1>{title}</h1>
     <p>{description}</p>
   </div>
@@ -61,18 +61,18 @@ if (bstyle == "rounded") {
   .zoom-off:hover {
     transform: scale(0.98);
   }
+  .mediun {
+    flex-basis: 400px;
+  }
+  .small {
+    flex-basis: 200px;
+  }
   .stroke {
     background-color: var(--bg);
   }
   .stroke h1,
   .stroke p {
     color: var(--fr);
-  }
-  .mediun {
-    flex-basis: 400px;
-  }
-  .small {
-    flex-basis: 200px;
   }
   .rounded {
     border-radius: 20px;

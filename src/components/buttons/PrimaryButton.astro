@@ -1,9 +1,34 @@
 ---
-const { text = "Button", bstyle = "circle", fstyle = "fill" } = Astro.props;
+const {
+  text = "Button",
+  bstyle = "circle",
+  fill = true,
+  icon = true,
+} = Astro.props;
 ---
 
-<button class:list={[bstyle, fstyle]}>
+<button
+  class:list={[
+    bstyle,
+    { fill: fill, border: !fill },
+    { pd1: icon, pd2: !icon },
+  ]}
+>
+  {
+    icon && (
+      <div class="pre-icon">
+        <slot name="pre-icon" />
+      </div>
+    )
+  }
   <span>{text}</span>
+  {
+    icon && (
+      <div class="post-icon">
+        <slot name="post-icon" />
+      </div>
+    )
+  }
 </button>
 
 <style>
@@ -11,10 +36,15 @@ const { text = "Button", bstyle = "circle", fstyle = "fill" } = Astro.props;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem 2.5rem;
-    font-size: calc(1rem + 0.5vw);
+    font-size: calc(0.8rem + 0.5vw);
     border: none;
     outline: none;
+  }
+  .pd1 {
+    padding: 0.2rem 3rem;
+  }
+  .pd2 {
+    padding: 0.9rem 3rem;
   }
   button:hover {
     cursor: pointer;
@@ -22,6 +52,14 @@ const { text = "Button", bstyle = "circle", fstyle = "fill" } = Astro.props;
   span {
     color: var(--bg);
     font-family: var(--ffB);
+  }
+  .pre-icon {
+    transition: all 0.5s ease;
+    transform: translateX(-1.5rem);
+  }
+  .post-icon {
+    transition: all 0.5s ease;
+    transform: translateX(1.5rem);
   }
   .circle,
   .circle::before {
@@ -57,7 +95,7 @@ const { text = "Button", bstyle = "circle", fstyle = "fill" } = Astro.props;
   .fill:hover,
   .fill:focus,
   .border:hover span {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
   .border {
     position: relative;
@@ -80,5 +118,17 @@ const { text = "Button", bstyle = "circle", fstyle = "fill" } = Astro.props;
     z-index: -1;
     will-change: transform;
     transition: all 0.5s ease;
+  }
+  .fill:hover .pre-icon,
+  .fill:focus .pre-icon,
+  .border:hover .pre-icon {
+    transition: all 0.5s ease;
+    transform: translateX(-0.8rem);
+  }
+  .fill:hover .post-icon,
+  .fill:focus .post-icon,
+  .border:hover .post-icon {
+    transition: all 0.5s ease;
+    transform: translateX(0.8rem);
   }
 </style>
