@@ -1,3 +1,20 @@
+# Fresh Gradients
+
+Flesh Gradients es un repositorio de componentes personalizables hechos en Astro Js. Opta por una apariencia refrescante o desenfadada, aunque tambien se puede usar para plataformas más formales, pero no es su fuerte. Fresh contiene todo tipo de componentes, desde botones hasta cards personalizables.
+
+Este proyecto pretende convertirse en una página que contenga los componentes (ya sea a traves de descargas o copiar el código de los componentes) para su facil utilización y obtención por parte de los desarrolladores.
+
+> [!WARNING]  
+> Este proyecto está en fase de desarrollo
+
+## Components
+
+Los componentes presentan características estáticas y de facil personalización. Abarca bottones, cards, etc.
+
+### Buttons
+
+--> continuará
+
 # Astro Starter Kit: Basics
 
 ```
