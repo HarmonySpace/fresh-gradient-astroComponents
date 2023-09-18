@@ -7,51 +7,23 @@ Este proyecto pretende convertirse en una página que contenga los componentes (
 > [!WARNING]  
 > Este proyecto está en fase de desarrollo
 
-## Components
+## Componentes
 
 Los componentes presentan características estáticas y de facil personalización. Abarca bottones, cards, etc.
 
-### Buttons
+### Botones
 
---> continuará
+Los botones estan compuestos por botones comunes de acción a los que se le pueden asignar los "handle events", este es el caso de los **PrimaryButtons**.
 
-# Astro Starter Kit: Basics
+![Alt text](image.png)
 
-```
-npm create astro@latest -- --template basics
-```
+![Alt Text](https://drive.google.com/file/d/1JJRiW-bGbNbhXivDEWLnI_gEtMTvFRei/view?usp=sharing)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+### Enlaces
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Los enlaces posee una similitud a los botones. Sin embargo, cambia ligeramente su animación en relación a los botones, además de el ancho y logitud de los paddings.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
+![Alt text](image-1.png)
 
 ## 🧞 Commands
 
