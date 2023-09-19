@@ -15,17 +15,15 @@ Los componentes presentan características estáticas y de facil personalizació
 
 Los botones estan compuestos por botones comunes de acción a los que se le pueden asignar los "handle events", este es el caso de los **PrimaryButtons**.
 
-![Alt text](image.png)
-
-![Alt Text](https://drive.google.com/file/d/1JJRiW-bGbNbhXivDEWLnI_gEtMTvFRei/view?usp=sharing)
+![buttons](./src/assets/documentation/buttons.gif)
 
 ### Enlaces
 
 Los enlaces posee una similitud a los botones. Sin embargo, cambia ligeramente su animación en relación a los botones, además de el ancho y logitud de los paddings.
 
-![Alt text](image-1.png)
+![buttons](./src/assets/documentation/anchors.gif)
 
-## 🧞 Commands
+<!-- ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -40,4 +38,4 @@ All commands are run from the root of the project, from a terminal:
 
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat). -->
