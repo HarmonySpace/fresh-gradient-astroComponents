@@ -23,6 +23,8 @@ Los enlaces posee una similitud a los botones. Sin embargo, cambia ligeramente s
 
 ![buttons](./src/assets/documentation/anchors.gif)
 
+### Cards
+
 <!-- ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
